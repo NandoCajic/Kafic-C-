@@ -1,0 +1,58 @@
+# Project: Kafic
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o Cijenik.o DnevniPromet.o Gost.o Konobar.o Nabava.o Pice.o Sanker.o Sef.o Skladiste.o Voditelj.o
+LINKOBJ  = main.o Cijenik.o DnevniPromet.o Gost.o Konobar.o Nabava.o Pice.o Sanker.o Sef.o Skladiste.o Voditelj.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Kafic.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Cijenik.o: Cijenik.cpp
+	$(CPP) -c Cijenik.cpp -o Cijenik.o $(CXXFLAGS)
+
+DnevniPromet.o: DnevniPromet.cpp
+	$(CPP) -c DnevniPromet.cpp -o DnevniPromet.o $(CXXFLAGS)
+
+Gost.o: Gost.cpp
+	$(CPP) -c Gost.cpp -o Gost.o $(CXXFLAGS)
+
+Konobar.o: Konobar.cpp
+	$(CPP) -c Konobar.cpp -o Konobar.o $(CXXFLAGS)
+
+Nabava.o: Nabava.cpp
+	$(CPP) -c Nabava.cpp -o Nabava.o $(CXXFLAGS)
+
+Pice.o: Pice.cpp
+	$(CPP) -c Pice.cpp -o Pice.o $(CXXFLAGS)
+
+Sanker.o: Sanker.cpp
+	$(CPP) -c Sanker.cpp -o Sanker.o $(CXXFLAGS)
+
+Sef.o: Sef.cpp
+	$(CPP) -c Sef.cpp -o Sef.o $(CXXFLAGS)
+
+Skladiste.o: Skladiste.cpp
+	$(CPP) -c Skladiste.cpp -o Skladiste.o $(CXXFLAGS)
+
+Voditelj.o: Voditelj.cpp
+	$(CPP) -c Voditelj.cpp -o Voditelj.o $(CXXFLAGS)
